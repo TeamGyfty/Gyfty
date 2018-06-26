@@ -9,7 +9,6 @@ router.use("/gifts", giftRoutes);
 // Response routes
 router.use("/requests", requestRoutes);
 
-
 // Gift routes
 router.use("/responses", responseRoutes);
 
