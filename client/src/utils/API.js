@@ -28,7 +28,7 @@ export default {
 
 	addResponse: (response) => {
 		// add new response
-		if (item)
+		if (item) {
 		let newResponse = {};
 		newResponse.name = response.name,
 		newResponse.imageURL = response.URL,
@@ -44,8 +44,9 @@ export default {
 					return err;
 				})
 
-			)
+		)
 		}
+		
 	}
 
 
