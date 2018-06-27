@@ -3,10 +3,18 @@ import axios from "axios";
 export default {
 	// Get gifts
 	getGifts: () => {
-		return axios.get("/gifts")
+		return axios.get("/api/gifts")
 	},
 	getRequests: () => {
-		return axios.get("/requests")
+		return axios.get("/api/requests")
+	},
+
+	getRequest: (id) => {
+		return axios.get("/api/requests/" + id)
+	},
+
+	deleteRequest: (id) => {
+		return axios.delete("/api/requests/" + id)
 	},
 
 	addRequest: (request) => {
