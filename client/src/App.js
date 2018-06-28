@@ -5,11 +5,7 @@ import logo from './logo.svg';
 import './App.css';
 import API from "./utils/API";
 // import Login from "./components/Login/Login"
-import Amplify from "aws-amplify"
-// import { withAuthenticator } from "aws-amplify-react";
-import aws_exports from "./aws-exports";
 
-Amplify.configure(aws_exports);
 
 class App extends Component {
   render() {
@@ -28,8 +24,6 @@ class App extends Component {
 }
 
 
-ComponentDidMount() {
 
-}
 
 export default App;
