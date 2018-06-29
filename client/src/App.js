@@ -1,6 +1,11 @@
-import React, { Component } from 'react';
+// import React, { Component } from 'react';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
+import API from "./utils/API";
+// import Login from "./components/Login/Login"
+
 
 class App extends Component {
   render() {
@@ -17,5 +22,8 @@ class App extends Component {
     );
   }
 }
+
+
+
 
 export default App;

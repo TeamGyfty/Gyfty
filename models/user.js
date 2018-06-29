@@ -1,3 +1,4 @@
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
@@ -23,3 +24,4 @@ const User = mongoose.model("User", UserSchema);
 
 //Export the User model
 module.exports = User;
+
