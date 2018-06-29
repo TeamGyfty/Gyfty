@@ -28,35 +28,16 @@ mongoose.connect("mongodb://localhost/userdb");
 // mongoose.connect("mongodb://localhost/passport_local_mongoose_userdb");
 
 // Routes
-app.post("/api/login", passport.authenticate("local"), function (req, res) {
-  console.log(req.body);
-  res.json("./home.html");
-  // res.redirect('/home.html.');
-});
-// app.post("/api/login", function (req, res) {
-//   console.log(req.body);
-//   res.json("./home.html");
 
-// });
+app.get("/join", function(req,res){
+  res.send("./join.html");
+})
+app.post('/api/login', 
+  passport.authenticate('local', { failureRedirect: '/join' }),
+  function(req, res) {
+    res.json('./home.html');
+  });
 
-// app.post('/api/login', 
-//   passport.authenticate('local', { failureRedirect: '/login' }),
-//   function(req, res) {
-//     res.redirect('/home');
-//   });
-// Route to post our form submission to mongoDB via mongoose
-// app.post("/api/join", function(req, res) {
-//   console.log(req.body);
-//   User.create(req.body)
-//     .then(function(dbUser) {
-      
-//       res.json(dbUser);
-//     })
-//     .catch(function(err) {
-      
-//       res.json(err);
-//     });
-// });
 
 app.post("/api/join", function (req, res) {
   console.log(req.body);
@@ -72,3 +53,32 @@ app.post("/api/join", function (req, res) {
 app.listen(PORT, function() {
   console.log("App running on port " + PORT + "!");
 });
+
+
+// app.post("/api/login", passport.authenticate("local"), function (req, res) {
+//   console.log(req.body);
+//   res.json("./home.html");
+
+//   app.post('/api/login',
+//   passport.authenticate('local', { successRedirect: '/',
+//                                    failureRedirect: '/login' }));
+//   // res.redirect('/home.html.');
+// });
+// app.post("/api/login", function (req, res) {
+//   console.log(req.body);
+//   res.json("./home.html");
+
+// });
+// Route to post our form submission to mongoDB via mongoose
+// app.post("/api/join", function(req, res) {
+//   console.log(req.body);
+//   User.create(req.body)
+//     .then(function(dbUser) {
+      
+//       res.json(dbUser);
+//     })
+//     .catch(function(err) {
+      
+//       res.json(err);
+//     });
+// });
