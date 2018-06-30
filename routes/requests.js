@@ -5,7 +5,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require("path");
 const requests = require("../models/Requests.js");
-const response = require("../models/Response.js");
+const responses = require("../models/Response.js");
 
 
 
@@ -24,7 +24,7 @@ const response = require("../models/Response.js");
  // GET for specific request
  router.get("/request/:_id", (req, res) => {
  	requests.findOne({ "_id": req.params.id })
- 	.populate("response") 
+ 	.populate("responses") 
  	.then(results => {
  		res.json(results)
  	})
@@ -37,14 +37,15 @@ const response = require("../models/Response.js");
   router.post("/requests/new", (req, res) => {
   	// create a new request and pass the req.body to the entry
   	let newRequest = new Request({
-  		name: req.body.name,
-  		age: req.body.age,
-  		price: req.body.price,
-  		occasion: req.body.occasion
+  		"name": req.body.name,
+      "title": req.body.title,
+  		"age": req.body.age,
+  		"price": req.body.price,
+  		"occasion": req.body.occasion
   	});
   	console.log("new request")
   	// save note to db
-  	request.create(newRequest)
+  	requests.create(newRequest)
   	  .then(results => res.json(results))
   	  .catch(err => {
   	  	res.json(err);
@@ -54,7 +55,7 @@ const response = require("../models/Response.js");
 // REMOVE for deleting a request
   router.delete("/requests/delete/:id", (req, res) => {
   	if (req.params.id) {
-  		request
+  		requests
   		  .remove({_id: req.params.id})
   		  .then(result => res.json(result))
   		  .catch(err => res.json(err));

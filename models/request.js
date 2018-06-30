@@ -7,7 +7,7 @@ const requestSchema = new Schema({
   
   "name": { type: String, required: true },
   "title": { type: String, required: true }
-  "age": { type: Number, required: true },
+  "age": { type: String, required: true },
   "price": { type: Number, required: true },
   "occasion": { type: String, required: true },
   "response_id": { type: Schema.Types.ObjectId, ref: "Responses"}
