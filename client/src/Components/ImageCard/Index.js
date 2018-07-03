@@ -1,0 +1,1 @@
+//setsup the reusable ImageCard

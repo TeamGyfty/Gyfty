@@ -2,7 +2,8 @@
 
 module.exports = {
     Gift: require("./request"),
-    requiredGiftdata: require("./requiredGift"),
+    AutoGift: require("./autoGift"),
     User: require("./user"),
-    giftSuggestion: require("./response")
+    giftSuggestion: require("./response"),
+    RequiredGift: require("./requiredGift")
 };

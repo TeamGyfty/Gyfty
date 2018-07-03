@@ -1,0 +1,38 @@
+//create database
+use giftydb
+
+//insert into the autogifts collection
+db.autogifts.insert(
+    {
+        Name: 'Spartan Knife Block',
+        Price: '70', 
+        Image:'https://images-na.ssl-images-amazon.com/images/I/51iZs4weuAL.jpg',
+        Link: 'https://www.amazon.com/dp/B00RDZDDCC/ref=strm_fun_79_nad_47_5',
+        RandomSample: 'Math.random()',
+        Entry: '1',  
+    }
+)
+
+db.autogifts.insert(
+    {
+       Name: 'Grey Casual Backpack',
+       Price: '39',
+       Image: 'https://images-na.ssl-images-amazon.com/images/I/81GhqhEJ7sL._SL1100_.jpg',
+       Link: 'https://www.amazon.com/dp/B00J0055YC/ref=strm_fun_nad_33_1',
+       RandomSample: 'Math.random()',
+       Entry:'2',
+    }
+)
+
+db.autogifts.insert(
+    {
+       Name: 'Whiskey Decanter Globe',
+       Price: '80',
+       Image: 'https://images-na.ssl-images-amazon.com/images/I/71XaXr9NURL._SL1100_.jpg',
+       Link: 'https://www.amazon.com/dp/B077Y46JNH/ref=strm_fun_79_nad_23_',
+       RandomSample: 'Math.random()',
+       Entry:'3',
+    }
+)
+
+//run a random number generator function to generate 10 random numbers between 1-30 then math those numbers to the entry
