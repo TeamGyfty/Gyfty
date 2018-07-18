@@ -3,7 +3,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import logo from './logo.svg';
 import './App.css';
+import { Grid, Row } from "react-bootstrap";
 import API from "./utils/API";
+import Admin from "./components/Admin/Admin"
 // import Login from "./components/Login/Login"
 
 
@@ -25,16 +27,20 @@ class App extends Component {
 //   }
 // }
   // list of requests
-  requests: []
-
-
-
-  componentDidMount() {
-    this.populateData();
+    requests: [],
+  // modalActive 
+    modalActive: false,
   }
-  populateData = () => {
-    this.getRequests();
-  }
+
+
+
+  // componentDidMount() {
+  //   this.populateData();
+  // };
+
+  // populateData = () => {
+  //   this.getRequests();
+  // }
 
   getRequests = () => {
     API.getRequests().then((res) => {

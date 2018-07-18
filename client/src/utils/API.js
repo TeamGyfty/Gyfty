@@ -5,10 +5,11 @@ export default {
 	getGifts: () => {
 		return axios.get("/api/gifts")
 	},
+	// get all requests
 	getRequests: () => {
 		return axios.get("/api/requests")
 	},
-
+	// 
 	getRequest: (id) => {
 		return axios.get("/api/requests/" + id)
 	},
@@ -20,6 +21,8 @@ export default {
 	addRequest: (request) => {
 		if (request) {
 		let newRequest = {};
+		newRequest.name = request.name,
+		newRequest.title = request.title,
 		newRequest.age = request.age,
 		newRequest.price = request.price,
 		newRequest.occasion = request.occasion
@@ -39,8 +42,9 @@ export default {
 		if (item) {
 		let newResponse = {};
 		newResponse.name = response.name,
-		newResponse.imageURL = response.URL,
+		newResponse.title = response.title,
 		newResponse.description = response.description,
+		newResponse.imageURL = response.URL,
 		newResponse.link = response.link;
 		
 		return (
